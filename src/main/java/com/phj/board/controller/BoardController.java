@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.phj.board.command.BwriteCommand;
+import com.phj.board.command.BWriteCommand;
 
 @Controller
 public class BoardController {
@@ -19,12 +19,13 @@ public class BoardController {
 	@RequestMapping(value = "/write")
 	public String write(HttpServletRequest request, Model model) {
 		
+		//request.getParameter("bname");
 		model.addAttribute("request", request);
-		// 글쓴이, 글제목, 글내용이 저장되어 있는 request 객체를 model 객체에 넣음
+		//글쓴이,글제목,글내용이 저장되어 있는 request 객체를 model객체에 넣음
 		
-		BwriteCommand command = new BwriteCommand();
-		command.excute(model); // request 객체가 실려있는 model객체를 BWriteCommand 객체에게 전달
+		BWriteCommand command = new BWriteCommand();
+		command.excute(model);//request객체가 실려있는 model객체를 BwriteCommand 객체에게 전달
 		
-		return "";
+		return "list";
 	}
 }

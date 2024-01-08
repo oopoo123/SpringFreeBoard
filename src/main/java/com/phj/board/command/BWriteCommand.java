@@ -1,6 +1,5 @@
 package com.phj.board.command;
 
-import java.sql.SQLTransactionRollbackException;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +8,7 @@ import org.springframework.ui.Model;
 
 import com.phj.board.dao.BoardDao;
 
-public class BwriteCommand {
+public class BWriteCommand {
 	
 	public void excute(Model model) {
 		
@@ -24,6 +23,7 @@ public class BwriteCommand {
 		
 		BoardDao dao = new BoardDao();
 		dao.write(bname, btitle, bcontent);
+		
 	}
-
+	
 }
